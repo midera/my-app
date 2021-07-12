@@ -1,0 +1,14 @@
+.description_block{
+    padding: 10px;
+}
+.header_img{
+    width: 1000px;
+    height: 350px;
+}
+.imgAva{
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+}

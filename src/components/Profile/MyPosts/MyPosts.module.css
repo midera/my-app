@@ -1,0 +1,39 @@
+.item {
+    color: #362e56;
+}
+
+.item img {
+    width: 60px;
+
+}
+
+.posts {
+    background: #f3fcf9;
+    margin-top: 10px;
+
+}
+
+.button_add {
+    background: none;
+    border-color: #41afdb;
+    color: #0e3f4e;
+    padding: 5px 5px;
+    width: 15%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.button_remove {
+
+    background: none;
+    border-color: #41afdb;
+    color: #0e3f4e;
+    padding: 5px 5px;
+    width: 15%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.posts_block {
+    padding: 10px;
+}
