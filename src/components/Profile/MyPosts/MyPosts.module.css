@@ -23,17 +23,15 @@
     border-radius: 20px;
 }
 
-.button_remove {
-
-    background: none;
-    border-color: #41afdb;
-    color: #0e3f4e;
-    padding: 5px 5px;
-    width: 15%;
-    text-align: center;
-    border-radius: 20px;
-}
-
 .posts_block {
     padding: 10px;
+}
+textarea {
+    width: 60%;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+
 }

@@ -3,13 +3,15 @@ import s from './Post.module.css';
 const Post = (props) => {
     return (
         <div className={s.item}>
-            <img src="https://simg.nicepng.com/png/small/173-1738712_report-abuse-pop-art-woman-png.png"
-                 alt="postImg"/><h3>{props.message}</h3>
-            <div className={s.likeCount}>
-                <span><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e4299734559659.56d57de04bda4.gif"
-                           alt=""/>{props.likesCount}</span>
-            </div>
+            <img src="https://cdn.impactinit.com/cdn/x/x@003c4108c3/smss53/smsimg28/pv/isignstockcontributors/iss_12137_06469.jpg" alt="avaCount"/>
+            <span className={s.count}><h2>{props.message}</h2>
+            <h5>{props.likesCount}</h5></span>
+               <img className={s.likeCount}
+                    src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e4299734559659.56d57de04bda4.gif"
+                    alt="like"/>
+
+
         </div>
-    );
+    )
 }
 export default Post;

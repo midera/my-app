@@ -1,11 +1,13 @@
+import React from 'react';
 import s from './Header.module.css';
-const Header=()=>{
-    return  <header className={s.header}>
-        <h3>BLOG & POST</h3>
-        {/*<img*/}
-        {/*    src="https://www.pngkey.com/png/full/15-156574_purple-flame-logo-clip-art-at-clker-purple.png"*/}
-        {/*    alt="img0"/>*/}
+import {NavLink} from 'react-router-dom';
 
+const Header = () => {
+    return <header className={s.header}>
+       <div className={s.titleBox}><h3 className={s.title}>BLOG & POST</h3></div>
+        <div className={s.login}>
+            <NavLink to={'/login'}>LOGIN</NavLink>
+        </div>
     </header>
 }
 export default Header;

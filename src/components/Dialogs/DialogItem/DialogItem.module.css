@@ -1,3 +1,16 @@
-.dialogsItem{
-    background-color: #41afdb;
+
+.dialogs_item .active {
+    color: #861f91;
+padding: 10px;
 }
+
+.dialog {
+color: #911f7e;
+}
+.avaMessage {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    padding-top: 10%;
+}
+

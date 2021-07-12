@@ -12,3 +12,7 @@
 .item a.activeLink {
     color: #0c7277;
 }
+.friendsName{
+    color: #1eccd2;
+    text-decoration: none;
+}

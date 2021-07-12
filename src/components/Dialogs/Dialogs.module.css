@@ -6,19 +6,32 @@
 
 .dialogs_item {
     padding: 10px;
+    margin-top: 10px;
 }
 
-.dialogs_item .active {
-    color: #861f91;
-
+.buttonSend{
+    background: none;
+    border-color: #41afdb;
+    color: #0e3f4e;
+    padding: 5px 5px;
+    width: 150px;
+    text-align: center;
+    border-radius: 20px;
 }
 
-.dialog {
-
-}
-
-.messages {
+.textareaSend {
+    width: 60%;
+    border: none;
+    border-radius: 15px;
     padding: 10px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
 }
+
+
+
+
+
+
 
 
