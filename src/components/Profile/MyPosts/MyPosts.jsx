@@ -17,7 +17,7 @@ const MyPosts = (props) => {
         props.updateNewPostActionCreator(sendMessage);
     };
     return <div className={s.posts_block}>
-        <h3>My posts</h3>
+        <h3>My posts</h3>2
         <div>
             <div>
                 <textarea onChange={onPostChange}

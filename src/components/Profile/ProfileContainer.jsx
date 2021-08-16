@@ -1,32 +1,38 @@
 import React from "react";
 import Profile from "./Profile";
-import axios from "axios";
 import {connect} from 'react-redux';
-import {setUserProfile} from "../../redux/profilePage-reducer";
 import {withRouter} from "react-router-dom";
+import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
+import {getJob, getUserProfile, updateJob} from "../../redux/profilePage-reducer";
 
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-     let userId = this.props.match.params.userId;
-     if (!userId) {
-         userId=7
-     }
-        axios.get(`https://reqres.in/api/users/`+userId)
-            .then(response => {
-                this.props.setUserProfile(response.data.data);
-            });
+
+        let userId = this.props.match.params.userId;
+        if (!userId) {
+            userId = 7
+        }
+        this.props.getUserProfile(userId);
+        this.props.getJob(userId);
     }
+
     render() {
         return <div>
-            <Profile {...this.props} profile={this.props.profile} />
+            <Profile {...this.props} profile={this.props.profile} job={this.props.job} updateJob={this.props.updateJob}/>
         </div>
     }
 }
 
 let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    job: state.profilePage.job
+
 });
 
-let withRouterUrlContainerComponent = withRouter(ProfileContainer);
-export default connect (mapStateToProps, {setUserProfile})(withRouterUrlContainerComponent);
+
+export default compose(
+    connect(mapStateToProps, {getUserProfile,getJob,updateJob}),
+    withAuthRedirect,withRouter)
+(ProfileContainer);

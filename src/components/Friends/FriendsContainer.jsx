@@ -4,7 +4,7 @@ import {addFriendActionCreator} from "../../redux/sideBarPage-reducer";
 
 let mapStateToProps = (state) => {
     return {
-        friendsData: state.sideBarPage.friendsData
+        friendsData: state.sideBar.friendsData
     }
 };
 

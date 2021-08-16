@@ -30,7 +30,7 @@ const dialogsPageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newMessageBody: '',
-                messagesData: [...state.messagesData, {id: 4, message: body}]
+                messagesData: [...action.messagesData, {id: 4, message: body}]
             };
         }
         default: {

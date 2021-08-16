@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 .header {
+    font-family: 'Fredericka the Great', cursive;
     display: flex;
     grid-area: h;
     background-color: #1eccd2;
 }
 
 .titleBox {
-    background: floralwhite;
-
     width: 200px;
 }
 
@@ -15,6 +16,7 @@
 }
 
 .login {
+
     margin-left: auto;
     justify-content: flex-end;
     padding: 14px;

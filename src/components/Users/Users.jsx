@@ -3,6 +3,7 @@ import s from "./Users.Module.css"
 import {NavLink} from "react-router-dom";
 
 
+
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
@@ -20,18 +21,21 @@ let Users = (props) => {
         </div>
         {props.users.map(user => <div key={user.id}>
             <div>
-                <NavLink to={'/profile/'+user.id} ><img className={s.icon} src={user.avatar} alt="wrapper"/></NavLink>
+                <NavLink to={'/profile/' + user.id}><img className={s.icon} src={user.avatar} alt="wrapper"/></NavLink>
             </div>
             <h3>{user.first_name} {" "}{user.last_name}</h3>
             <div>
                 {user.email}
             </div>
-            <div>
-                {props.user ? <button onClick={() => {
-                    props.unfollow(user.id)
-                }} className={s.unfollow}>unfollow</button> : <button onClick={() => {
-                    props.follow(user.id)
-                }} className={s.button_add}>follow</button>}
+            <div >
+
+                {user.support
+                    ? <button disabled={props.folLowInProgress.some(id => id ===user.id)} className={s.unfollow} onClick={() => {
+                        props.unfollow(user.id)
+                    }} >unfollow</button>
+                    : <button disabled={props.folLowInProgress.some(id => id ===user.id)} className={s.button_add} onClick={() => {
+                   props.follow(user.id)
+                    }} >follow</button>}
             </div>
         </div>)
         }

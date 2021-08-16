@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rancho&display=swap');
 .nav {
+    font-family: 'Rancho', cursive;
     grid-area: n;
     background-color: #131212;
     padding: 20px;
+    font-size: 25px;
 
 }
 

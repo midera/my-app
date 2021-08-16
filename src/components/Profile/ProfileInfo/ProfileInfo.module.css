@@ -1,14 +1,23 @@
-.description_block{
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+.description_block {
+    font-family: 'Racing Sans One', cursive;
     padding: 10px;
 }
-.header_img{
+
+.header_img {
     width: 1000px;
     height: 350px;
 }
-.imgAva{
+
+.imgAva {
     vertical-align: middle;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     padding: 10px;
+}
+.blockInfoPerson{
+    width: 200px;
+    height: 200px;
 }

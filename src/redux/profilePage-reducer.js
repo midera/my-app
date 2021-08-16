@@ -1,6 +1,10 @@
+import {profileAPI, usersAPI} from "../api/api";
+
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_JOB = 'SET-JOB';
 
 
 let initialState = {
@@ -12,6 +16,7 @@ let initialState = {
         {id: 5, message: 'Rain ?', likeCount: 18}],
     newPostsText: '',
     profile: null,
+    job:' '
 
 }
 const profilePageReducer = (state = initialState, action) => {
@@ -31,12 +36,17 @@ const profilePageReducer = (state = initialState, action) => {
         case UPDATE_NEW_POST_TEXT: {
             return {
                 ...state,
-                newPostsText: action.newPostsText
+                newPostsText: action.newText
             }
         }
         case SET_USER_PROFILE: {
             return {
                 ...state, profile: action.profile
+            }
+        }
+        case SET_JOB:{
+            return {
+                ...state,job:action.job
             }
         }
         default: {
@@ -47,10 +57,27 @@ const profilePageReducer = (state = initialState, action) => {
 
 }
 export const addPostActionCreator = () => ({type: ADD_POST});
+export const setJob = () => ({type: SET_JOB});
 export const updateNewPostActionCreator = (sendMessage) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: sendMessage});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 
+export const getUserProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(userId).then(response => {
+        dispatch(setUserProfile(response.data));
+    });
+};
+export const getJob=(userId)=>(dispatch) =>{
 
+    profileAPI.getJob(userId).then(response=>{
+        dispatch(setJob(response.data))
+    })
+}
+export const updateJob=(status)=>(dispatch) =>{
+
+    profileAPI.updateJob(status).then(response=>{
+        dispatch(setJob(response.data))
+    })
+}
 
 export default profilePageReducer
